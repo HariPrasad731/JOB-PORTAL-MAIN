@@ -1,0 +1,298 @@
+/* --- Base Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.edit-job-page {
+  background: #f3f4f6;
+  min-height: 100vh;
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.edit-job-wrapper {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: rgba(31, 41, 55, 0.55);
+  margin-bottom: 32px;
+}
+
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e6e8eb;
+  border-radius: 14px;
+  padding: 36px 40px;
+  text-align: left;
+  /* Crucial: Allow dropdowns to overflow the card */
+  overflow: visible; 
+}
+
+/* --- Row Layout --- */
+.row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 16px;
+  position: relative; /* Context for absolute dropdowns */
+}
+
+.row label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(31, 41, 55, 0.6);
+}
+
+/* --- Inputs & Standard Fields --- */
+input,
+select,
+textarea,
+.custom-select-header {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #e6e8eb;
+  background: #f9fafb;
+  font-size: 13.5px;
+  color: rgba(31, 41, 55, 0.8);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+textarea {
+  height: 140px;
+  padding-top: 12px;
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder,
+.placeholder-text {
+  color: rgba(31, 41, 55, 0.45);
+}
+
+input:focus, .custom-select-header.active {
+  border-color: #2f80ed;
+  background: #ffffff;
+}
+
+/* --- Custom Dropdown Components --- */
+.custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  font-size: 12px;
+  color: #6b7280;
+  transition: transform 0.2s ease;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.custom-dropdown-overlay {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e6e8eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  z-index: 1000;
+}
+
+/* Width adjustments per screenshot */
+.education-grid { width: 780px; }
+.experience-grid { width: 640px; }
+
+.grid-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 24px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  width: 16px !important;
+  height: 16px !important;
+  cursor: pointer;
+  accent-color: #2f80ed;
+}
+
+.option-label {
+  font-size: 13px;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+/* --- Experience Specific manual input --- */
+.experience-extra-input {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.extra-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.manual-exp-input {
+  height: 34px !important;
+  width: 100% !important;
+  border-radius: 6px !important;
+  font-size: 12.5px !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* --- Inner Field Cards (Job Type, Salary, etc) --- */
+.field-card {
+  background: #ffffff;
+  border: 1px solid #e6e8eb;
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job-type-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 520px;
+}
+
+.job-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: rgba(31, 41, 55, 0.65);
+}
+
+.job-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: #2f80ed;
+}
+
+.from-to {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.from-to span {
+  font-size: 13.5px;
+  color: rgba(31, 41, 55, 0.5);
+}
+
+.from-to input {
+  width: 180px;
+  height: 38px;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 28px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.location-item span {
+  min-width: 60px;
+  font-size: 13.5px;
+  color: rgba(31, 41, 55, 0.5);
+}
+
+.location-item input {
+  flex: 1;
+  height: 38px;
+}
+
+/* --- Action Buttons --- */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.btn {
+  width: 160px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+.cancel-btn:hover {
+  background: #f9fafb;
+}
+
+.preview-btn {
+  background: #2f80ed;
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.25);
+}
+
+.preview-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 6px 16px rgba(47, 128, 237, 0.35);
+}

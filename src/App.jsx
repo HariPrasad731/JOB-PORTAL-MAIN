@@ -1,0 +1,184 @@
+import React from 'react'
+import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+// Layout/Landing Imports
+import { Landingpage } from './Landingpage'
+import { AboutUs } from './Components-LandingPage/AboutUs'
+import FindTalent from './Components-LandingPage/FindTalent'
+
+// Employer Signup/Login Imports
+import { Elogin } from './Components-EmployerSignup/Elogin'
+import { Esignup } from './Components-EmployerSignup/Esignup'
+import { Eforgotpassword } from './Components-EmployerSignup/Eforgotpassword'
+import { Ecreatepassword } from './Components-EmployerSignup/Ecreatepassword'
+
+// Jobseeker Signup/Login Imports
+import { Jlogin } from './Components-JobseekerSignup/Jlogin'
+import { Jsignup } from './Components-JobseekerSignup/Jsignup'
+import { Jcreatepassword } from './Components-JobseekerSignup/Jcreatepassword'
+import { Jforgotpassword } from './Components-JobseekerSignup/Jforgotpassword'
+
+// Jobseeker Main Feature Imports
+import { Afterloginlanding } from './Components-Jobseeker/Afterloginlanding'
+import { OpportunityOverview } from './Components-Jobseeker/OpportunityOverview'
+import { MyJobs } from './Components-Jobseeker/MyJobs'
+import { JobsTab } from './Components-Jobseeker/JobsTab'
+import { CompaniesTab } from './Components-Jobseeker/CompaniesTab'
+import { MyProfile } from './Components-Jobseeker/MyProfile'
+import { JobsThroughCompany } from './Components-Jobseeker/JobsThroughCompany'
+import Apply from './Components-Jobseeker/Apply'
+import AppliedSuccessfull from './Components-Jobseeker/AppliedSuccessfull'
+import PreviewJob from "./Components-Jobseeker/PreviewJob";
+import EditJob from "./Components-Jobseeker/EditJob";
+
+// Help Center Imports
+import HelpCenter from './Components-Jobseeker/HelpCenter'
+import { RaiseTicket } from './Components-Jobseeker/RaiseTicket'
+import { HelpFAQ } from './Components-Jobseeker/HelpFAQ'
+import LiveChat from './Components-Jobseeker/LiveChat'
+import ProfileCreationHelp from './Components-Jobseeker/ProfileCreationHelp'
+import LoginIssues from './Components-Jobseeker/LoginIssues' 
+import PageErrors from './Components-Jobseeker/PageErrors' 
+import FileUploadProblems from './Components-Jobseeker/FileUploadProblems'
+
+const router = createBrowserRouter([
+  /* --- General & Landing Routes --- */
+  {
+    path: '/Job-portal',
+    element: <Landingpage />,
+  },
+  {
+    path: '/Job-portal/aboutus',
+    element: <AboutUs />,
+  },
+  {
+    path: '/Job-portal/find-talent',   
+    element: <FindTalent />,
+  },
+
+  /* --- Jobseeker Auth Routes --- */
+  {
+    path: '/Job-portal/jobseeker/login',
+    element: <Jlogin />,
+  },
+  {
+    path: '/Job-portal/jobseeker/signup',
+    element: <Jsignup />,
+  },
+  {
+    path: '/Job-portal/jobseeker/login/forgotpassword',
+    element: <Jforgotpassword />,
+  },
+  {
+    path: '/Job-portal/jobseeker/login/forgotpassword/createpassword',
+    element: <Jcreatepassword />,
+  },
+
+  /* --- Employer Auth Routes --- */
+  {
+    path: '/Job-portal/employer/login',
+    element: <Elogin />,
+  },
+  {
+    path: '/Job-portal/employer/signup',
+    element: <Esignup />,
+  },
+  {
+    path: '/Job-portal/employer/login/forgotpassword',
+    element: <Eforgotpassword />,
+  },
+  {
+    path: '/Job-portal/employer/login/forgotpassword/createpassword',
+    element: <Ecreatepassword />,
+  },
+
+  /* --- Jobseeker Dashboard & Job Features --- */
+  {
+    path: '/Job-portal/jobseeker/',
+    element: <Afterloginlanding />,
+  },
+  {
+    path: '/Job-portal/jobseeker/OpportunityOverview/:id',
+    element: <OpportunityOverview />,
+  },
+  {
+    path: '/Job-portal/jobseeker/apply/:id',
+    element: <Apply />,
+  },
+  {
+    path: '/Job-portal/jobseeker/applied-success',
+    element: <AppliedSuccessfull />,
+  },
+  {
+    path: '/Job-portal/jobseeker/myjobs',
+    element: <MyJobs />,
+  },
+  {
+    path: '/Job-portal/jobseeker/jobs',
+    element: <JobsTab />,
+  },
+  {
+    path: '/Job-portal/jobseeker/companies',
+    element: <CompaniesTab />,
+  },
+  {
+    path: '/Job-portal/jobseeker/companies/:companyId',
+    element: <JobsThroughCompany />,
+  },
+  {
+    path: '/Job-portal/jobseeker/myprofile',
+    element: <MyProfile />,
+  },
+
+  /* --- Job Posting / Editing Routes --- */
+  {
+    path: '/Job-portal/preview-job',
+    element: <PreviewJob />,
+  },
+  {
+    // This matches the Link in your Footer for the "Blog" button
+    path: '/Job-portal/edit-job', 
+    element: <EditJob />,
+  },
+
+  /* --- Help Center Sub-Routes --- */
+  {
+    path: '/Job-portal/jobseeker/help-center',
+    element: <HelpCenter />,
+  },
+  {
+    path: '/Job-portal/jobseeker/help-center/login-issues',
+    element: <LoginIssues />,
+  },
+  {
+    path: '/Job-portal/jobseeker/help-center/page-errors',
+    element: <PageErrors />,
+  },
+  {
+    path: '/Job-portal/jobseeker/help-center/file-upload-problems',
+    element: <FileUploadProblems />,
+  },
+  {
+    path: '/Job-portal/jobseeker/help-center/raise-a-ticket',
+    element: <RaiseTicket />,
+  },
+  {
+    path: '/Job-portal/jobseeker/help-center/help-FAQs',
+    element: <HelpFAQ />,
+  },
+  {
+    path: '/Job-portal/jobseeker/help-center/live-chat',
+    element: <LiveChat />,
+  },
+  {
+    path: '/Job-portal/jobseeker/help-center/profile-creation-help',
+    element: <ProfileCreationHelp />,
+  },
+])
+
+function App() {
+  return <RouterProvider router={router} />
+}
+
+export default App
